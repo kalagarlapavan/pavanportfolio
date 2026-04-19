@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalagarla Pavan — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1b2a;--accent:#e9a84c;--light:#f7f3ee;--muted:#8a9ab0;--border:rgba(233,168,76,0.18);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--light);line-height:1.7;overflow-x:hidden;}
+header{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;overflow:hidden;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(30,58,95,.9),transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(233,168,76,.12),transparent 60%),linear-gradient(170deg,#1b2a3b,var(--navy));}
+.ring{position:absolute;border-radius:50%;border:1px solid var(--border);}
+.ring:nth-child(1){width:500px;height:500px;animation:spin 40s linear infinite;}
+.ring:nth-child(2){width:350px;height:350px;animation:spin 25s linear infinite reverse;}
+.ring:nth-child(3){width:220px;height:220px;animation:spin 18s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.hero-content{position:relative;z-index:2;}
+.badge{display:inline-block;border:1px solid var(--border);background:rgba(233,168,76,.08);color:var(--accent);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:100px;margin-bottom:1.5rem;animation:up .8s ease both;}
+header h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,6rem);font-weight:900;line-height:1.05;color:#fff;animation:up .8s .1s ease both;}
+header h1 span{color:var(--accent);}
+.hero-sub{margin-top:1rem;font-size:1.1rem;color:var(--muted);font-weight:300;animation:up .8s .2s ease both;}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;z-index:2;animation:up 1s .6s ease both;}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent);animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,27,42,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;justify-content:center;flex-wrap:wrap;gap:.4rem;padding:.8rem 1rem;}
+nav a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;padding:.4rem .9rem;border-radius:100px;transition:all .25s;}
+nav a:hover,nav a.active{color:var(--accent);background:rgba(233,168,76,.1);}
+.wrap{max-width:1050px;margin:0 auto;padding:5rem 2rem;}
+.lbl{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#fff;margin-bottom:.8rem;}
+.div{width:48px;height:3px;background:linear-gradient(90deg,var(--accent),transparent);margin-bottom:2.5rem;border-radius:2px;}
+section+section{border-top:1px solid rgba(255,255,255,.04);}
+.glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2rem;transition:transform .3s,box-shadow .3s,border-color .3s;}
+.glass:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.3);border-color:var(--border);}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem;margin-bottom:2.5rem;}
+.ibox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem 1.5rem;transition:border-color .3s;}
+.ibox:hover{border-color:var(--border);}
+.ilbl{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.ival{font-weight:600;color:#fff;font-size:.95rem;}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;}
+thead tr{border-bottom:1px solid var(--border);}
+th{padding:.8rem 1rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);text-align:left;}
+td{padding:1rem;border-bottom:1px solid rgba(255,255,255,.05);font-size:.93rem;}
+tbody tr{transition:background .2s;}
+tbody tr:hover{background:rgba(233,168,76,.05);}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;}
+.ctitle{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--accent);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+ul{list-style:none;padding:0;}
+li{font-size:.9rem;padding:.35rem 0 .35rem 1.2rem;position:relative;opacity:.85;}
+li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700;}
+.tags{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.5rem;}
+.tag{padding:.4rem 1rem;border-radius:100px;font-size:.85rem;font-weight:500;border:1px solid var(--border);background:rgba(233,168,76,.07);color:#f0c078;transition:all .25s;}
+.tag:hover{background:rgba(233,168,76,.18);transform:scale(1.05);}
+.tl{position:relative;padding-left:2rem;}
+.tl::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:1px;background:linear-gradient(to bottom,var(--accent),transparent);}
+.ti{position:relative;margin-bottom:2rem;}
+.ti::before{content:'';position:absolute;left:-2.35rem;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(233,168,76,.18);}
+.tschool{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem;}
+.tclass{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#fff;}
+.tgrade{display:inline-block;margin-top:.4rem;font-size:.8rem;color:var(--accent);border:1px solid var(--border);padding:.15rem .7rem;border-radius:100px;}
+.obj{border-left:3px solid var(--accent);padding:1.2rem 1.5rem;background:rgba(233,168,76,.05);border-radius:0 12px 12px 0;margin-top:2rem;font-size:.97rem;color:rgba(247,243,238,.85);line-height:1.8;}
+.travel p{font-size:1rem;color:rgba(247,243,238,.8);line-height:1.9;margin-bottom:1.2rem;}
+.travel p:last-child{margin-bottom:0;}
+.travel strong{color:var(--accent);}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.2rem;}
+.citem{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem 1.5rem;transition:border-color .3s,transform .3s;}
+.citem:hover{border-color:var(--border);transform:translateY(-3px);}
+.cicon{width:40px;height:40px;border-radius:10px;background:rgba(233,168,76,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.clbl{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem;}
+.cval{font-size:.92rem;color:#fff;font-weight:500;}
+.cval a{color:var(--accent);text-decoration:none;}
+footer{border-top:1px solid var(--border);text-align:center;padding:2rem;color:var(--muted);font-size:.85rem;}
+footer span{color:var(--accent);}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:640px){nav a{font-size:.75rem;padding:.35rem .6rem;}.wrap{padding:3.5rem 1.2rem;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+  <div class="hero-content">
+    <div class="badge">Portfolio · 2024</div>
+    <h1>Kalagarla<br><span>Pavan</span></h1>
+    <p class="hero-sub">CSE (AI) Student &nbsp;·&nbsp; Amrita Vishwa Vidyapeetham</p>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#hobbies">Hobbies</a>
+  <a href="#travel">Travel</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <div class="wrap reveal">
+    <p class="lbl">Who I Am</p><h2>Personal Information</h2><div class="div"></div>
+    <div class="info-grid">
+      <div class="ibox"><div class="ilbl">Date of Birth</div><div class="ival">28 March 2007</div></div>
+      <div class="ibox"><div class="ilbl">Gender</div><div class="ival">Male</div></div>
+      <div class="ibox"><div class="ilbl">Nationality</div><div class="ival">Indian</div></div>
+      <div class="ibox"><div class="ilbl">Languages</div><div class="ival">Telugu · English · Hindi</div></div>
+    </div>
+    <p class="lbl" style="margin-top:2rem">Family</p>
+    <table>
+      <thead><tr><th>Name</th><th>Phone</th><th>Occupation</th></tr></thead>
+      <tbody>
+        <tr><td>Tataji (Father)</td><td>9866332904</td><td>Business</td></tr>
+        <tr><td>Sarada (Mother)</td><td>9642021710</td><td>Homemaker</td></tr>
+        <tr><td>Sahithi (Sister)</td><td>—</td><td>Student</td></tr>
+      </tbody>
+    </table>
+    <div class="grid" style="margin-top:2rem">
+      <div class="glass"><div class="ctitle">📚 Favourite Books</div><ul><li>Bhagavad Gita</li><li>Atomic Habits</li></ul></div>
+      <div class="glass"><div class="ctitle">🎬 Favourite Movies</div><ul><li>Sita Ramam</li><li>Mahanati</li></ul></div>
+      <div class="glass"><div class="ctitle">📺 Web Series</div><ul><li>Stranger Things</li><li>Mismatch</li><li>Wednesday</li><li>Squid Game</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap reveal">
+    <p class="lbl">Academic Journey</p><h2>Education</h2><div class="div"></div>
+    <div class="tl">
+      <div class="ti"><div class="tschool">Sri Chaitanya</div><div class="tclass">10th Standard</div><div class="tgrade">80%</div></div>
+      <div class="ti"><div class="tschool">Sri Chaitanya</div><div class="tclass">12th Standard</div><div class="tgrade">80%</div></div>
+      <div class="ti"><div class="tschool">Amrita Vishwa Vidyapeetham</div><div class="tclass">B.Tech CSE (AI) · 1st Year</div><div class="tgrade">85%</div></div>
+    </div>
+    <div class="obj"><strong style="color:var(--accent)">Career Objective —</strong> Passionate about learning Artificial Intelligence and emerging technologies with a strong desire to start a technology-driven startup. Aims to combine technical expertise and entrepreneurial vision to solve real-world problems.</div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap reveal">
+    <p class="lbl">What I Know</p><h2>Skills & Achievements</h2><div class="div"></div>
+    <div class="grid">
+      <div class="glass"><div class="ctitle">💻 Technical Skills</div><div class="tags"><span class="tag">HTML</span><span class="tag">C Language</span><span class="tag">Java (Learning)</span></div></div>
+      <div class="glass"><div class="ctitle">🏆 Achievements</div><ul><li>Created a helpful project list</li><li>Developed a website</li></ul></div>
+      <div class="glass"><div class="ctitle">🎯 Extra Curricular</div><ul><li>Helping others</li><li>Playing sports</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="hobbies">
+  <div class="wrap reveal">
+    <p class="lbl">Beyond the Classroom</p><h2>Hobbies & Interests</h2><div class="div"></div>
+    <div class="grid">
+      <div class="glass"><div class="ctitle">🎨 Hobbies</div><ul><li>Reading Books</li><li>Listening to Music</li><li>Meditation</li><li>Gardening</li><li>Cooking</li><li>Playing Board Games</li><li>Traveling</li><li>Collecting Coins</li></ul></div>
+      <div class="glass"><div class="ctitle">💡 Interests</div><ul><li>Business & Entrepreneurship</li><li>Art & Culture</li><li>Health & Wellness</li><li>Politics</li><li>Technology & Innovation</li></ul></div>
+      <div class="glass"><div class="ctitle">🎤 Skill-Based</div><ul><li>Singing</li><li>Badminton</li><li>Cooking</li><li>Public Speaking & Debate</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="travel">
+  <div class="wrap reveal">
+    <p class="lbl">Travel Diary</p><h2>Puri, Odisha</h2><div class="div"></div>
+    <div class="glass travel" style="max-width:780px">
+      <p>I visited the <strong>Jagannath Temple</strong>, one of the Char Dham sites. The energy near the Lion Gate (Singhadwara) was immense. Entering through the Lion Gate and exiting through the Elephant Gate is considered auspicious. I was fortunate to visit just after the Rath Yatra amid a calm crowd, witnessing beautiful Kalinga architecture.</p>
+      <p>After spiritual exploration, I spent time at <strong>Golden Beach</strong>, known for its wide sandy stretch and strong waves — perfect for sunset views, sand art, and camel rides. The <strong>Mahaprasad</strong> at Anand Bazaar was an unforgettable experience.</p>
+      <p>Finally, I visited the <strong>Konark Sun Temple</strong>, 35 km from Puri — a UNESCO World Heritage Site shaped like a chariot, adorned with stunning stone carvings and steeped in divine artistry.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap reveal">
+    <p class="lbl">Get In Touch</p><h2>Contact Information</h2><div class="div"></div>
+    <div class="cgrid">
+      <div class="citem"><div class="cicon">✉️</div><div><div class="clbl">Email</div><div class="cval">pavan@62435gmail.com</div></div></div>
+      <div class="citem"><div class="cicon">📞</div><div><div class="clbl">Phone</div><div class="cval">8273665471</div></div></div>
+      <div class="citem"><div class="cicon">🎓</div><div><div class="clbl">University</div><div class="cval"><a href="https://www.amrita.edu/" target="_blank">Amrita Vishwa Vidyapeetham</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer><p>© 2024 <span>Kalagarla Pavan</span> &nbsp;·&nbsp; Designed with ❤️ and HTML + CSS</p></footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('visible')),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const secs=document.querySelectorAll('section[id]'),links=document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id;});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c));});
+</script>
+</body>
+</html>
